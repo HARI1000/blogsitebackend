@@ -8,6 +8,7 @@ const postRoute = require("./routes/posts");
 const categoriesRoute =require("./routes/categories");
 const multer= require("multer");
 const path =require("path");
+const PORT=process.env.PORT || 5000
 var cors = require('cors')
 app.use(cors())
 dotenv.config();
@@ -39,7 +40,7 @@ app.use("/api/auth",authRoute);
 app.use("/api/users",userRoute);
 app.use("/api/posts",postRoute);
 app.use("/api/categories",categoriesRoute);
-app.listen("5000",() => {
+app.listen(PORT,() => {
     console.log("Hi it is running");
 })
 
